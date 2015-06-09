@@ -23,9 +23,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.uswitch</groupId>
-            <artifactId>kafka_2.9.2</artifactId>
-            <version>0.8.0-SNAPSHOT</version>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>0.8.2.1</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -48,19 +48,43 @@
                     <groupId>jline</groupId>
                     <artifactId>jline</artifactId>
                 </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>zookeeper</artifactId>
+                    <groupId>org.apache.zookeeper</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
             <groupId>com.aphyr</groupId>
             <artifactId>riemann-java-client</artifactId>
-            <version>0.2.2</version>
+            <version>0.3.1</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>netty</artifactId>
+                    <groupId>io.netty</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.yammer.metrics</groupId>
             <artifactId>metrics-core</artifactId>
             <version>2.2.0</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
