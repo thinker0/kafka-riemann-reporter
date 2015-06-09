@@ -1,7 +1,5 @@
 package org.pingles.kafka;
 
-import com.aphyr.riemann.client.AbstractRiemannClient;
-import com.aphyr.riemann.client.RiemannClient;
 import com.yammer.metrics.core.Clock;
 import kafka.metrics.KafkaMetricsConfig;
 import kafka.metrics.KafkaMetricsReporter;
@@ -35,7 +33,7 @@ public class KafkaRiemannReporter implements KafkaRiemannReporterMBean, KafkaMet
             reporter = new RiemannReporter(Clock.defaultClock(), publisher);
             startReporter(metricsConfig.pollingIntervalSecs());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            LOGGER.warn(e.getMessage(), e);
         }
     }
 

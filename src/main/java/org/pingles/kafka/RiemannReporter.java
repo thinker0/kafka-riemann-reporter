@@ -1,7 +1,6 @@
 package org.pingles.kafka;
 
 import com.aphyr.riemann.Proto;
-import com.aphyr.riemann.client.AbstractRiemannClient;
 import com.yammer.metrics.Metrics;
 import com.yammer.metrics.core.*;
 import com.yammer.metrics.reporting.AbstractPollingReporter;

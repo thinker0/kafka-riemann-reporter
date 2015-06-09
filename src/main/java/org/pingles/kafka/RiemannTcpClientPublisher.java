@@ -15,7 +15,7 @@ public class RiemannTcpClientPublisher implements RiemannEventPublisher {
 
     @Override
     public void publish(Proto.Event event) throws IOException {
-        riemann.sendEventsWithAck(event);
+        riemann.sendEvent(event);
     }
 
     private void connect() throws IOException {
